@@ -18,7 +18,7 @@ Apple's own button. 3DS and redirect steps open in the system browser.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/whopio/elements-swift.git", from: "0.1.1")
+    .package(url: "https://github.com/whopio/elements-swift.git", from: "0.1.2")
 ]
 ```
 

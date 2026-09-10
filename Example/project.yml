@@ -1,0 +1,63 @@
+# The example as it ships inside whopio/elements-swift.
+#
+# The package is a RELATIVE path, not a URL: the example lives in that repo beside the manifest it
+# consumes, so it builds the release it shipped with, needs no network to resolve, and cannot drift
+# from the version around it. publish_sdk.sh writes this beside the copied sources as project.yml
+# and generates the project there.
+name: ElementsExample
+
+options:
+  deploymentTarget:
+    iOS: "18.0"
+  groupSortPosition: top
+  bundleIdPrefix: com.whop.elements.example
+
+settings:
+  base:
+    SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+    SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+    SUPPORTS_MACCATALYST: NO
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES: YES
+
+packages:
+  Elements:
+    path: ..
+
+targets:
+  ElementsExample:
+    type: application
+    platform: iOS
+    sources: [ElementsExample]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.whop.elements.example
+        PRODUCT_NAME: ElementsExample
+        SWIFT_VERSION: "5.10"
+        IPHONEOS_DEPLOYMENT_TARGET: "18.0"
+        INFOPLIST_FILE: ElementsExample/Info.plist
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+      configs:
+        debug:
+          SWIFT_OPTIMIZATION_LEVEL: -Onone
+        release:
+          SWIFT_OPTIMIZATION_LEVEL: -O
+
+    dependencies:
+      - package: Elements
+        product: Elements
+
+schemes:
+  ElementsExample:
+    build:
+      targets:
+        ElementsExample: all
+    run:
+      config: Debug
+      environmentVariables:
+        OS_ACTIVITY_MODE: disable
+    analyze:
+      config: Debug
+    archive:
+      config: Release
