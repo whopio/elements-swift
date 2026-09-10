@@ -2,6 +2,10 @@
 
 All notable changes to the Whop Payment Elements SDK are documented here.
 
+## [0.1.3] - 2026-09-10
+
+- Apple Pay token intents are sent in the string form the charge pipeline reads.
+
 ## [0.1.2] - 2026-09-10
 
 - Adds a runnable example app under `Example/`, building against the release it ships with.
@@ -24,6 +28,7 @@ First release.
 - Street autocomplete from `MKLocalSearchCompleter`: no API key, no account, no permission.
 - `WhopElementsAppearance` with the same theme vocabulary as the web and React Native elements.
 
+[0.1.3]: https://github.com/whopio/elements-swift/releases/tag/0.1.3
 [0.1.2]: https://github.com/whopio/elements-swift/releases/tag/0.1.2
 [0.1.1]: https://github.com/whopio/elements-swift/releases/tag/0.1.1
 [0.1.0]: https://github.com/whopio/elements-swift/releases/tag/0.1.0

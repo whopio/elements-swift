@@ -20,8 +20,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "Framework",
-            url: "https://github.com/whopio/elements-swift/releases/download/0.1.2/Elements.xcframework.zip",
-            checksum: "bfb414f461d002625ca9fb70e129692ef8ac72655080ee0fba9028789e182eb7"
+            url: "https://github.com/whopio/elements-swift/releases/download/0.1.3/Elements.xcframework.zip",
+            checksum: "1607735b6213406786b7da4d276ae9e69d25c165fdaad0975b5c179095e19073"
         ),
     ],
     swiftLanguageModes: [.v5]
